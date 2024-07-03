@@ -1,0 +1,19 @@
+app: second-app
+env: distinct-smoke
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.64.0
+values:
+  containerPort: 3000
+  gitRepository: lalyos/expressjs-test-app2
+  gitSha: '{{ .SHA }}'
+  image:
+    dockerfile: ""
+    repository: registry.k3z.eu:31521/{{ .APP }}
+    tag: '{{ .SHA }}'
+  imagePullSecrets: []
+  replicas: 1
+  resources:
+    ignoreLimits: true
