@@ -11,7 +11,7 @@ values:
   gitSha: '{{ .SHA }}'
   image:
     dockerfile: ""
-    repository: lalyos
+    repository: lalyos/12factor
     tag: readiness
   imagePullSecrets: []
   ingress:
