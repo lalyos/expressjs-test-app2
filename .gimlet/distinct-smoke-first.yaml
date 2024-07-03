@@ -1,0 +1,27 @@
+app: first
+env: distinct-smoke
+namespace: default
+chart:
+  repository: https://chart.onechart.dev
+  name: onechart
+  version: 0.64.0
+values:
+  containerPort: 80
+  gitRepository: lalyos/expressjs-test-app2
+  gitSha: '{{ .SHA }}'
+  image:
+    dockerfile: ""
+    repository: lalyos
+    tag: readiness
+  imagePullSecrets: []
+  ingress:
+    annotations: {}
+    host: first.gimlet.k3z.eu
+    path: /
+    tlsEnabled: false
+  replicas: 1
+  resources:
+    ignoreLimits: true
+  vars:
+    COLOR2: orange
+    TITLE: GIMLET rulez
